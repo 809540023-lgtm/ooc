@@ -4,7 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OOG | OPC Osaka Gateway</title>
-    <meta name="description" content="OPC Osaka Gateway is the entry point for OPC Osaka Group ventures, research, automation, and deployment systems." />
+    <meta
+      name="description"
+      content="OPC Osaka Gateway 是大阪精品 OPC 公司與多產業事業的入口網站。"
+      data-i18n-attr="content:meta.description"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -14,51 +18,53 @@
         <span>OPC Osaka Gateway</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#group">Group</a>
-        <a href="#ventures">Ventures</a>
-        <a href="#systems">Systems</a>
-        <a href="#contact">Contact</a>
+        <a href="#group" data-i18n="nav.group">集團</a>
+        <a href="#ventures" data-i18n="nav.ventures">事業</a>
+        <a href="#systems" data-i18n="nav.systems">系統</a>
+        <a href="#contact" data-i18n="nav.contact">下一步</a>
       </nav>
+      <div class="language-switcher" aria-label="Language selector">
+        <button type="button" class="active" data-lang="zh-Hant">繁中</button>
+        <button type="button" data-lang="ja">日本語</button>
+        <button type="button" data-lang="zh-Hans">简中</button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Osaka-based venture gateway</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">大阪精品 OPC 事業入口</p>
           <h1>OPC Osaka Gateway</h1>
-          <p class="lead">
-            A refined entry point for OPC Osaka Group: connecting boutique ventures,
-            AI operations, market research, and deployment systems from one clear hub.
+          <p class="lead" data-i18n="hero.lead">
+            為 OPC Osaka Group 建立清晰、具精品感的入口：連結多產業事業、AI 營運、市場研究與部署系統。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#ventures">Explore ventures</a>
-            <a class="button" href="#systems">View systems</a>
+            <a class="button primary" href="#ventures" data-i18n="hero.primary">查看事業方向</a>
+            <a class="button" href="#systems" data-i18n="hero.secondary">查看內部系統</a>
           </div>
         </div>
         <aside class="signal-panel" aria-label="Gateway highlights">
           <div>
-            <span>Base</span>
-            <strong>Osaka, Japan</strong>
+            <span data-i18n="signal.baseLabel">據點</span>
+            <strong data-i18n="signal.base">日本大阪</strong>
           </div>
           <div>
-            <span>Role</span>
-            <strong>Group gateway</strong>
+            <span data-i18n="signal.roleLabel">角色</span>
+            <strong data-i18n="signal.role">集團入口</strong>
           </div>
           <div>
-            <span>Focus</span>
-            <strong>AI-native operations</strong>
+            <span data-i18n="signal.focusLabel">重點</span>
+            <strong data-i18n="signal.focus">AI 原生營運</strong>
           </div>
         </aside>
       </section>
 
       <section class="section" id="group">
-        <p class="eyebrow">Group identity</p>
+        <p class="eyebrow" data-i18n="group.eyebrow">集團定位</p>
         <div class="section-grid">
-          <h2>A boutique operating group built for multiple industries.</h2>
-          <p>
-            OOG is designed as the public doorway for a future Osaka company structure:
-            one parent identity, multiple industry projects, and a shared operating layer for
-            strategy, research, automation, and digital deployment.
+          <h2 data-i18n="group.title">以大阪為基地，建立跨產業的精品營運集團。</h2>
+          <p data-i18n="group.body">
+            OOG 是未來大阪公司架構的公開入口：以一個母品牌承接多個產業專案，並共享策略、研究、自動化與數位部署的營運層。
           </p>
         </div>
       </section>
@@ -66,52 +72,53 @@
       <section class="cards" id="ventures" aria-label="Venture areas">
         <article>
           <span>01</span>
-          <h3>AI Operations</h3>
-          <p>Agent governance, signal-to-action workflows, and internal automation templates.</p>
+          <h3 data-i18n="ventures.ai.title">AI 營運</h3>
+          <p data-i18n="ventures.ai.body">代理人治理、訊號到行動流程，以及內部自動化模板。</p>
         </article>
         <article>
           <span>02</span>
-          <h3>Market Intelligence</h3>
-          <p>Competitive research dashboards for CDP, customer engagement, and intent data markets.</p>
+          <h3 data-i18n="ventures.market.title">市場情報</h3>
+          <p data-i18n="ventures.market.body">針對 CDP、客戶互動與意圖資料市場建立競品研究儀表板。</p>
         </article>
         <article>
           <span>03</span>
-          <h3>Education & Talent</h3>
-          <p>School platform, hiring workflows, student portals, and cross-border talent systems.</p>
+          <h3 data-i18n="ventures.education.title">教育與人才</h3>
+          <p data-i18n="ventures.education.body">學校平台、招募流程、學生入口，以及跨境人才系統。</p>
         </article>
         <article>
           <span>04</span>
-          <h3>Commerce Systems</h3>
-          <p>Inventory, franchise, food-service, and lightweight operating tools for real businesses.</p>
+          <h3 data-i18n="ventures.commerce.title">商務系統</h3>
+          <p data-i18n="ventures.commerce.body">庫存、加盟、餐飲服務，以及真實企業使用的輕量營運工具。</p>
         </article>
       </section>
 
       <section class="section systems" id="systems">
-        <p class="eyebrow">Internal systems</p>
-        <h2>From concept to deployable company infrastructure.</h2>
+        <p class="eyebrow" data-i18n="systems.eyebrow">內部系統</p>
+        <h2 data-i18n="systems.title">從概念到可部署的公司基礎設施。</h2>
         <div class="system-list">
           <div>
             <strong>OOG Site</strong>
-            <span>Public gateway for shareholders, partners, and internal navigation.</span>
+            <span data-i18n="systems.site">供股東、合作夥伴與內部成員使用的公開入口。</span>
           </div>
           <div>
             <strong>OPC Atelier Deploy</strong>
-            <span>Repeatable deployment flow for GitHub, Render, and static research pages.</span>
+            <span data-i18n="systems.deploy">可重複使用的 GitHub、Render 與靜態研究頁部署流程。</span>
           </div>
           <div>
             <strong>AI Market Research</strong>
-            <span>Competitive intelligence dashboard for platform positioning and strategy.</span>
+            <span data-i18n="systems.research">用於平台定位與策略判斷的競爭情報儀表板。</span>
           </div>
         </div>
       </section>
 
       <section class="contact" id="contact">
-        <p class="eyebrow">Next step</p>
-        <h2>Use this gateway as the clean front door.</h2>
-        <p>
-          Add each venture, dashboard, investor page, and internal tool here as the OPC Osaka Group structure becomes more concrete.
+        <p class="eyebrow" data-i18n="contact.eyebrow">下一步</p>
+        <h2 data-i18n="contact.title">把這裡作為對外清楚、乾淨的公司入口。</h2>
+        <p data-i18n="contact.body">
+          隨著 OPC Osaka Group 的架構逐步具體化，可將各事業、儀表板、股東頁面與內部工具集中放在這裡。
         </p>
       </section>
     </main>
+    <script src="./app.js"></script>
   </body>
 </html>

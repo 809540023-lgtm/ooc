@@ -63,6 +63,32 @@ nav a {
   font-weight: 800;
 }
 nav a:hover { background: var(--soft); color: var(--green); }
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+.language-switcher button {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+.language-switcher button.active {
+  background: var(--green);
+  color: #fff;
+}
 main { max-width: 1220px; margin: 0 auto; padding: 34px; }
 .hero {
   min-height: 76vh;
@@ -176,6 +202,8 @@ h2 { margin: 0; font-size: clamp(30px, 5vw, 56px); line-height: 1.08; }
 .contact h2 { margin-bottom: 16px; }
 @media (max-width: 900px) {
   .topbar { align-items: flex-start; flex-direction: column; padding: 16px; }
+  .language-switcher { width: 100%; }
+  .language-switcher button { flex: 1; }
   main { padding: 18px; }
   .hero, .section-grid, .cards, .system-list div { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
