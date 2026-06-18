@@ -1,0 +1,7 @@
+services:
+  - type: web
+    runtime: static
+    name: ooc-gateway
+    plan: free
+    buildCommand: ""
+    staticPublishPath: .
