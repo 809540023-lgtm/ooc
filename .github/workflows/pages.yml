@@ -2,7 +2,7 @@ name: Deploy OOG Gateway to Pages
 
 on:
   push:
-    branches: [main]
+    branches: [gh-pages]
   workflow_dispatch:
 
 permissions:
