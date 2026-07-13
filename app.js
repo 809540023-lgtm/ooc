@@ -738,4 +738,24 @@ document.querySelectorAll("[data-lang]").forEach((button) => {
   button.addEventListener("click", () => applyLanguage(button.dataset.lang));
 });
 
+const gatewayVisual = document.querySelector(".gateway-visual");
+const gatewayScene = document.querySelector(".gateway-scene");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (gatewayVisual && gatewayScene) {
+  gatewayVisual.addEventListener("pointermove", (event) => {
+    if (reducedMotion.matches) return;
+    const bounds = gatewayVisual.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    gatewayScene.style.setProperty("--tilt-x", `${61 - y * 8}deg`);
+    gatewayScene.style.setProperty("--tilt-z", `${-9 + x * 10}deg`);
+  });
+
+  gatewayVisual.addEventListener("pointerleave", () => {
+    gatewayScene.style.removeProperty("--tilt-x");
+    gatewayScene.style.removeProperty("--tilt-z");
+  });
+}
+
 applyLanguage(localStorage.getItem("oog-language") || "zh-Hant");

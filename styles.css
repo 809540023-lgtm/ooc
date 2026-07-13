@@ -214,6 +214,8 @@ h1 {
   align-content: end;
   gap: 12px;
   padding: 20px;
+  overflow: hidden;
+  perspective: 900px;
 }
 .signal-panel div {
   padding: 18px;
@@ -221,6 +223,108 @@ h1 {
   background: rgba(255,255,255,0.045);
   border: 1px solid var(--line);
 }
+.signal-panel .gateway-visual {
+  position: relative;
+  min-height: 330px;
+  padding: 0;
+  overflow: hidden;
+  border-color: rgba(102, 217, 239, 0.28);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(64, 213, 168, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(9, 20, 23, 0.58), rgba(5, 11, 13, 0.96));
+}
+.gateway-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 62%, rgba(5, 11, 13, 0.9));
+}
+.gateway-scene {
+  --tilt-x: 61deg;
+  --tilt-z: -9deg;
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 50%;
+  top: 46%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateX(var(--tilt-x)) rotateZ(var(--tilt-z));
+  transition: transform 220ms ease-out;
+}
+.gateway-grid {
+  position: absolute;
+  inset: -55px;
+  padding: 0;
+  border: 0;
+  background:
+    linear-gradient(rgba(102, 217, 239, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102, 217, 239, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(circle, #000 26%, transparent 70%);
+  transform: translateZ(-38px);
+}
+.gateway-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 0;
+  border: 1px solid rgba(102, 217, 239, 0.38);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  animation: gateway-spin 12s linear infinite;
+}
+.orbit-one { width: 122px; height: 122px; margin: -61px; }
+.orbit-two { width: 198px; height: 198px; margin: -99px; animation-duration: 18s; animation-direction: reverse; }
+.orbit-three { width: 270px; height: 270px; margin: -135px; animation-duration: 24s; }
+.orbit-node {
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translateY(-50%) translateZ(12px);
+  box-shadow: 0 0 20px currentColor;
+}
+.node-green { color: var(--green); background: var(--green); }
+.node-cyan { color: var(--cyan); background: var(--cyan); }
+.node-gold { color: var(--gold); background: var(--gold); }
+.gateway-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-content: center;
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  border: 1px solid rgba(64, 213, 168, 0.72);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(102,217,239,0.45), rgba(10,25,27,0.98) 62%);
+  box-shadow: 0 0 42px rgba(64,213,168,0.36), inset 0 0 20px rgba(255,255,255,0.12);
+  transform: translate(-50%, -50%) translateZ(36px) rotateZ(9deg) rotateX(-61deg);
+  text-align: center;
+}
+.gateway-core span { color: #fff; font-size: 23px; font-weight: 900; line-height: 1; }
+.gateway-core small { margin-top: 5px; color: var(--green); font-size: 8px; font-weight: 850; letter-spacing: 0.16em; }
+.scene-label {
+  position: absolute;
+  z-index: 2;
+  padding: 5px 8px;
+  border: 1px solid rgba(128, 214, 194, 0.32);
+  border-radius: 4px;
+  background: rgba(8, 18, 20, 0.82);
+  color: #cfe7e1;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+  transform: translateZ(28px) rotateZ(9deg) rotateX(-61deg);
+}
+.label-ai { left: 4px; top: 64px; }
+.label-market { right: -3px; top: 40px; }
+.label-commerce { right: 8px; bottom: 48px; }
+@keyframes gateway-spin { to { transform: rotate(360deg); } }
 .signal-panel span,
 .cards span {
   display: block;
@@ -592,4 +696,9 @@ h2 {
   .competitor-head { flex-direction: column; }
   .diary-date strong { font-size: 54px; }
   .hero { min-height: auto; }
+  .signal-panel .gateway-visual { min-height: 300px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gateway-orbit { animation-play-state: paused; }
+  .gateway-scene { transition: none; }
 }
